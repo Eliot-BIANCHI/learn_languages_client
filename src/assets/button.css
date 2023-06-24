@@ -1,0 +1,181 @@
+.btn {
+  border: none;
+  outline: none;
+  position: relative;
+  display: flex;
+    justify-content: center;
+  background-color: var(--clr-bg-medium);
+  border-radius: 3px;
+  color: var(--clr-element);
+  cursor: pointer;
+  font-size: 22px;
+  padding: 15px 25px;
+}
+
+.btn.round {
+  border-radius: 100px;
+}
+
+.btn.small {
+  font-size: 18px;
+  padding: 6px 12px;
+}
+
+
+.btn.large {
+  font-size: 35px;
+  padding: 20px 30px;
+}
+
+.btn.none {
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0;
+}
+
+.btn:not(.btn-bdr-pop, .btn-bg-slide-hor, .btn-bg-slide-vrt, .btn-bg-slide-diag, .btn-bg-slide-dbl-diag, .btn-bg-collision, :disabled) {
+  border: 2px solid transparent;
+}
+
+.btn:not(.btn-bdr-pop, .btn-bg-slide-hor, .btn-bg-slide-vrt, .btn-bg-slide-diag, .btn-bg-slide-dbl-diag, .btn-bg-collision, :disabled):hover,
+  .btn:not(.btn-bdr-pop, .btn-bg-slide-hor, .btn-bg-slide-vrt, .btn-bg-slide-diag, .btn-bg-slide-dbl-diag, .btn-bg-collision, :disabled):focus {
+  background-color: var(--clr-bg-strong);
+  border-color: var(--clr-element);
+}
+
+.btn:disabled {
+  border: 2px solid transparent;
+  cursor: not-allowed;
+  opacity: 0.40;
+}
+
+.btn:disabled::before, .btn:disabled::after {
+  display: none !important;
+}
+.btn:disabled:hover {
+  color: var(--clr-element) !important;
+  opacity: 0.6;
+}
+
+/* ## Border pop ## */
+.btn-bdr-pop::before {
+  content: '';
+  position: absolute;
+    inset: 1px;
+  border: 2px solid var(--clr-element);
+  border-radius: 5px;
+  z-index: -1;
+}
+
+.btn-bdr-pop.round::before {
+  border-radius: 100px;
+}
+
+.btn-bdr-pop:is(:hover, :focus)::before {
+  top: calc(2px * -2);
+  right: calc(2px * -2);
+  bottom: calc(2px * -2);
+  left: calc(2px * -2);
+}
+
+/* ## Background slides ## */
+
+:is(.btn-bg-slide-hor, .btn-bg-slide-vrt, .btn-bg-slide-diag, .btn-bg-slide-dbl-diag, .btn-bg-collision) {
+  overflow: hidden;
+  z-index: 1;
+}
+
+:is(.btn-bg-slide-hor, .btn-bg-slide-vrt, .btn-bg-slide-diag, .btn-bg-slide-dbl-diag, .btn-bg-collision):is(:hover, :focus) {
+  color: var(--clr-white-strong);
+}
+
+
+/* -- Horizontal and Vertical slides */
+:is(.btn-bg-slide-hor, .btn-bg-slide-vrt)::before {
+  content: '';
+  position: absolute;
+      inset: 0;
+  background-color: var(--clr-element);
+  z-index: -1;
+}
+
+.btn-bg-slide-hor::before { transform: scaleX(0); }
+.btn-bg-slide-hor:is(:hover, :focus)::before { transform: scaleX(1); }
+
+.btn-bg-slide-vrt::before { transform: scaleY(0); }
+.btn-bg-slide-vrt:is(:hover, :focus)::before { transform: scaleY(1); }
+
+
+/* -- Diagonal slides */
+:is(.btn-bg-slide-diag, .btn-bg-slide-dbl-diag)::before, 
+.btn-bg-slide-dbl-diag::after {
+  content: '';
+  position: absolute;
+      inset: 0;
+  border-bottom: 80px solid var(--clr-element);
+  z-index: -1;
+}
+
+:is(.btn-bg-slide-diag, .btn-bg-slide-dbl-diag)::before {
+  right: -50px;
+  border-right: 50px solid transparent;
+  transform: translateX(-100%);
+}
+
+.btn-bg-slide-dbl-diag::after {
+  left: -50px;
+  border-left: 50px solid transparent;
+  transform: translateX(100%);
+}
+
+.btn-bg-slide-diag:is(:hover, :focus)::before { transform: translateX(0); }
+
+.btn-bg-slide-dbl-diag:is(:hover, :focus)::before { transform: translateX(-30%); }
+.btn-bg-slide-dbl-diag:is(:hover, :focus)::after { transform: translateX(30%); }
+
+
+/* ## Background collision ## */
+.btn-bg-collision::before, .btn-bg-collision::after {
+  content: '';
+  position: absolute;
+      top: 50%;
+      translate: 0 -50%;
+  display: block;
+  background-color: var(--clr-element);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  z-index: -1;
+}
+
+.btn-bg-collision::before { left: -25px; }
+
+.btn-bg-collision::after { right: -25px; }
+
+.btn-bg-collision:is(:hover, :focus)::before { animation: criss-cross-left 600ms forwards; }
+
+.btn-bg-collision:is(:hover, :focus)::after { animation: criss-cross-right 600ms forwards; }
+
+
+@keyframes criss-cross-left {
+  50% {
+    left: 40%;
+    scale: 1;
+  }
+  to {
+    left: 45%;
+    scale: 10;
+  }
+}
+
+@keyframes criss-cross-right {
+  50% {
+    right: 40%;
+    scale: 1;
+  }
+  to {
+    right: 45%;
+    scale: 10;
+  }
+}

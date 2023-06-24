@@ -13,9 +13,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
     "pinia": "^2.0.36",
     "vue": "^3.3.2",
-    "vue-router": "^4.2.0"
+    "vue-router": "^4.2.0",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",

@@ -1,73 +1,115 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+  /* Light colors */
+  --clr-white-strong: #FBFBFB;
+  --clr-white-medium: #F4F3EE;
+  --clr-white-soft: #EFEFEF;
+  /* --clr-white-soft: #F8F9fA; */
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
+  --clr-box-shadow-light: lightgrey;
 
-  --vt-c-indigo: #2c3e50;
+  --clr-divider-light-strong: #161A1D;
+  --clr-divider-light-medium: #827878;
 
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+  --clr-txt-white: #0B090A;
 
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
-}
+  --clr-table-caption-light: #DEDEDE;
+  --clr-table-th-light: hsla(0 80% 80% / 0.1);
+  --clr-table-tr-odd-light: #EFEFEF;
+  --clr-table-tr-even-light: hsla(0 100% 100% / 0.5);
 
-/* semantic color variables for this project */
-:root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
+  /* Dark colors */
+  --clr-black-strong: #252525;
+  --clr-black-medium: #323232;
+  --clr-black-soft: #393939;
 
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
+  --clr-box-shadow-dark: darkgrey;
 
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
+  --clr-divider-dark-strong: #F8F7FF;
+  --clr-divider-dark-medium: #BDBDBD;
+
+  --clr-txt-black: #FFF;
+
+  --clr-table-caption-dark: hsla(0 0% 0% / 0.5);
+  --clr-table-th-dark: hsla(0 0% 0% / 0.25);
+  --clr-table-tr-odd-dark: #323232;
+  --clr-table-tr-even-dark: hsla(0 0% 0% / 0.1);
+
+  --clr-app: #55A630;
 
   --section-gap: 160px;
+  --nav-hgt: 150px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
+:root {
+  --clr-bg-strong: var(--clr-white-strong);
+  --clr-bg-medium: var(--clr-white-medium);
+  --clr-bg-soft: var(--clr-white-soft);
 
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
+  --clr-box-shadow: var(--clr-box-shadow-light);
 
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
-  }
+  --clr-divider-strong: var(--clr-divider-light-strong);
+  --clr-divider-medium: var(--clr-divider-light-medium);
+
+  --clr-txt: var(--clr-txt-white);
+
+  --clr-table-caption: var(--clr-table-caption-light);
+  --clr-table-th: var(--clr-table-th-light);
+  --clr-table-tr-odd: var(--clr-table-tr-odd-light);
+  --clr-table-tr-even: var(--clr-table-tr-even-light);
+}
+
+:root:has(img.dark-mode) {
+  --clr-bg-strong: var(--clr-black-strong);
+  --clr-bg-medium: var(--clr-black-medium);
+  --clr-bg-soft: var(--clr-black-soft);
+
+  --clr-box-shadow: var(--clr-box-shadow-dark);
+
+  --clr-divider-strong: var(--clr-divider-dark-strong);
+  --clr-divider-medium: var(--clr-divider-dark-medium);
+
+  --clr-txt: var(--clr-txt-black);
+
+  --clr-table-caption: var(--clr-table-caption-dark);
+  --clr-table-th: var(--clr-table-th-dark);
+  --clr-table-tr-odd: var(--clr-table-tr-odd-dark);
+  --clr-table-tr-even: var(--clr-table-tr-even-dark);
+}
+
+.primary { --clr-element: #00509d; }
+
+.success { --clr-element: #3DA35D; }
+
+.danger { --clr-element: #E63946; }
+
+.warning { --clr-element: #F7B538; }
+
+.info { --clr-element: #7400B8; }
+
+.secondary { --clr-element: #A9A9A9; }
+
+.dark { --clr-element: #2C3E50; }
+
+body {
+  background-color: var(--clr-bg-medium);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
-  font-weight: normal;
+  color: var(--clr-txt);
+  transition: background-color, border, border-color, color, 
+              transform, translate, scale, 
+              top, right, bottom, left, 
+              300ms;
 }
 
-body {
-  min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition: color 0.5s, background-color 0.5s;
-  line-height: 1.6;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  font-size: 15px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}

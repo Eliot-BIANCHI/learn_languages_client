@@ -1,0 +1,77 @@
+<svg
+  width="64"
+  height="64"
+  viewBox="0 0 16.933333 16.933333"
+  version="1.1"
+  xml:space="preserve"
+  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg">
+  <circle
+    style="fill:none;stroke:#000000;stroke-width:0.854807;stroke-dasharray:none;stroke-opacity:1"
+    cx="8.4666662"
+    cy="8.4666662"
+    r="3.4192307" />
+  <rect
+    style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.413242;stroke-dasharray:none;stroke-opacity:1"
+    width="0.85480767"
+    height="2.8493588"
+    x="8.0392628"
+    y="1.0583333"
+    ry="0.42740384" />
+  <rect
+    style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.413242;stroke-dasharray:none;stroke-opacity:1"
+    width="0.85480767"
+    height="2.849359"
+    x="-0.51847285"
+    y="4.3032079"
+    ry="0.42740384"
+    transform="rotate(-45)" />
+  <rect
+    style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.413242;stroke-dasharray:none;stroke-opacity:1"
+    width="0.85480767"
+    height="2.849359"
+    x="-0.42740339"
+    y="16.886044"
+    ry="0.42740384"
+    transform="rotate(-45)" />
+  <rect
+    style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.413231;stroke-dasharray:none;stroke-opacity:1"
+    width="0.85478204"
+    height="2.8492737"
+    x="-12.49237"
+    y="4.8215599"
+    ry="0.42739102"
+    transform="matrix(-0.7070856,-0.70712796,0.7070856,-0.70712796,0,0)" />
+  <rect
+    style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.413231;stroke-dasharray:none;stroke-opacity:1"
+    width="0.85478204"
+    height="2.8492737"
+    x="-12.491996"
+    y="-7.6702065"
+    ry="0.42739102"
+    transform="matrix(-0.7070856,-0.70712796,0.7070856,-0.70712796,0,0)" />
+  <rect
+    style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.413242;stroke-dasharray:none;stroke-opacity:1"
+    width="0.85480767"
+    height="2.8493588"
+    x="-8.8940706"
+    y="13.025641"
+    ry="0.42740384"
+    transform="rotate(-90)" />
+  <rect
+    style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.413242;stroke-dasharray:none;stroke-opacity:1"
+    width="0.85480767"
+    height="2.8493588"
+    x="-8.8940706"
+    y="1.0583333"
+    ry="0.42740384"
+    transform="rotate(-90)" />
+  <rect
+    style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.413242;stroke-dasharray:none;stroke-opacity:1"
+    width="0.85480767"
+    height="2.8493588"
+    x="8.0392628"
+    y="13.025641"
+    ry="0.42740384" />
+</svg>

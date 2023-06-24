@@ -1,0 +1,349 @@
+.frm {
+  container-type: inline-size;
+  display: flex;
+    flex-direction: column;
+    gap: 30px;
+  background-color: var(--clr-bg-strong);
+  border: 1px solid var(--clr-divider-medium);
+  border-radius: 5px;
+  color: var(--clr-txt);
+  padding: 50px 20px;
+  min-width: 325px;
+  width: 40%;
+}
+
+h2.form__title {
+  color: var(--clr-txt);
+  text-align: center;
+}
+
+h4.form__title {
+  color: var(--clr-txt);
+  padding: 0;
+}
+
+h3.form__title {
+  color: var(--clr-txt);
+  margin: 0;
+  padding: 0;
+}
+
+.form__row {
+  display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.form__group, .form__column {
+  display: flex; 
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form__field {
+  position: relative;
+  display: flex;
+    flex-direction: column;
+    gap: 8px;
+  font-size: 20px;
+  width: 100%;
+}
+
+.form__field label {
+  position: absolute;
+    top: 0;
+    translate: 0 -50%;
+    left: 20px;
+  background-color: var(--clr-bg-medium);
+  font-size: 20px;
+  padding: 0 3px;
+}
+
+.form__error {
+  position: relative;
+  display: inline-flex;
+    align-items: center;
+  color: #D50000;
+  font-size: 20px;
+  padding-left: 30px;
+}
+
+.form__error::before {
+  content: '\0021';
+  position: absolute;
+    left: 0;
+  background-color: #D50000;
+  border-radius: 100px;
+  color: #f8f8ff;
+  font-size: 18px;
+  text-align: center;
+  width: 22px;
+}
+
+/* ## Form password ## */
+.form__password {
+  position: absolute;
+    bottom: 150%;
+    left: 50%;
+    translate: -50% 0;
+  display: none;
+    flex-direction: column;
+    align-items: flex-start;
+  background-color: var(--clr-bg-soft);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 4px 2px var(--clr-box-shadow);
+  font-size: 18px;
+  padding: 10px 20px;
+  width: 125%;
+  z-index: 1;
+}
+.form__password::after {
+  content: '';
+  position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 100%;
+  display: block;
+  border-top: 15px solid var(--clr-bg-soft);
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;;
+  filter: drop-shadow(0px 3px 2px var(--clr-box-shadow));
+}
+.images {
+  position: absolute;
+    top: 50%;
+    right: 50px;
+    translate: 50% -50%;
+  display: flex;
+}
+.images > img {
+  cursor: pointer;
+}
+.form__password > h4 {
+  margin: 10px 0;
+}
+
+.form__password > ul {
+  display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  list-style: none;
+  margin: 0;
+  margin-left: 5px;
+}
+
+.form__password > ul > li {
+  color: #D50000;
+}
+.form__password > ul > li::before {
+  content: "\2715";
+  margin-right: 5px;
+}
+
+.form__password > ul > li.correct {
+  color: #27AE60;
+}
+.form__password > ul > li.correct::before {
+  content: "\2713";
+}
+
+.form__field:has(input:focus) > div {
+  display: flex;
+}
+/* -- Form password -- */
+
+@container (width > 400px) {
+  .form__group {
+    flex-direction: row;
+  }
+}
+
+
+.inp {
+  background-color: var(--clr-bg-medium);
+  border: 1px solid var(--clr-divider-medium);
+  border-radius: 5px;
+  color: var(--clr-txt);
+  font-size: 20px;
+  outline: transparent;
+  padding: 10px 15px;
+  width: 0;
+  min-width: 100%;
+}
+.inp:is(:hover, :focus) {
+  border-color: var(--clr-divider-strong);
+}
+
+:is(label, .inp):has(~ .form__error) {
+  --clr-app: #D50000;
+}
+
+.inp:disabled {
+  cursor: not-allowed;
+}
+
+/* Radio inputs */
+.form__radios {
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.form__radios > label {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  border: 2px solid var(--clr-divider-medium);
+  border-radius: 100px;
+  color: var(--clr-element);
+  cursor: pointer;
+  font-size: 20px;
+  width: 45px;
+  height: 45px;
+}
+
+.form__radios > label:hover {
+  border-color: var(--clr-element);
+}
+
+.form__radios > input {
+  display: none;
+}
+
+.form__radios > input:checked + label {
+  background-color: var(--clr-element);
+  border-color: var(--clr-element);
+  color: white;
+}
+
+/* Checkbox inputs */
+.form__checkboxs {
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.form__checkboxs > input {
+  display: none;
+}
+
+.form__checkboxs > label {
+  display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  border: 2px solid var(--clr-divider-medium);
+  border-radius: 5px;
+  color: var(--clr-element);
+  cursor: pointer;
+  font-size: 20px;
+  width: 70px;
+  height: 40px;
+}
+
+.form__checkboxs > label::before {
+  content: '';
+  display: block;
+  border-radius: 100px;
+  outline: 3px solid var(--clr-element);
+  outline-offset: 3px;
+  width: 10px;
+  height: 10px;
+}
+
+.form__checkboxs > label:hover {
+  border-color: var(--clr-element);
+}
+
+.form__checkboxs > input:checked + label {
+  border-color: var(--clr-element);
+}
+
+.form__checkboxs > input:checked + label::before {
+  background-color: var(--clr-element);
+  outline-offset: 3px;
+}
+
+/* Form switch */
+.form__switch > input {
+  display: none;
+}
+
+.form__switch > label {
+  display: flex;
+    align-items: center;
+  border: 2px solid var(--clr-divider-medium);
+  border-radius: 100px;
+  cursor: pointer;
+  padding: 0px 4px;
+  width: 60px;
+  height: 35px;
+}
+
+.form__switch > label:hover {
+  border-color: var(--clr-element);
+}
+
+.form__switch > label::before {
+  content: '';
+  display: block;
+  background-color: var(--clr-element);
+  border-radius: 100px;
+  width: 25px;
+  height: 25px;
+}
+
+.form__switch > input:checked + label {
+  background-color: var(--clr-element);
+  border-color: var(--clr-element);
+}
+
+.form__switch > input:checked + label::before {
+  background-color: white;
+  translate: 100%;
+}
+
+/* Form switch image */
+.form__switch-image > input {
+  display: none;
+}
+
+.form__switch-image > label {
+  display: flex;
+    justify-content: space-around;
+    align-items: center;
+  border: 2px solid var(--clr-divider-medium);
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0px 4px;
+  width: 55px;
+  height: 48px;
+}
+
+.form__switch-image > label:hover {
+  border-color: var(--clr-element);
+}
+
+.form__switch-image > input:checked + label {
+  background-color: var(--clr-element);
+  border-color: var(--clr-element);
+}
+
+/* Form select */
+select {
+  border: none;
+  outline: none;
+  background-color: var(--clr-bg-soft);
+  border: 2px solid var(--clr-divider-medium);
+  border-radius: 5px;
+  color: var(--clr-txt);
+  height: 40px;
+}
+
+select:is(:hover, :focus) {
+  border-color: var(--clr-divider-strong);
+}
